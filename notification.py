@@ -1,6 +1,6 @@
 from twilio.rest import Client
-account_sid = "AC0297b20d0406a5c16cee090742491697"
-auth_token = "824c35473f8c1f5c715e0ea5c8314b53"
+account_sid = "YOUR ACCOUNT ID"
+auth_token = "YOUR TOKEN"
 
 class NotificationManager:
     def __init__(self,price,dep_city,dep_iata,
