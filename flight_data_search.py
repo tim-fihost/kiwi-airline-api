@@ -1,6 +1,6 @@
 import requests
 from pprint import pprint
-API_KEY = "trFiDhTKzuDSL4QbxEo-l0c1P1moek0z"
+API_KEY = "YOUR API KEY"
 END_POINT = 'https://api.tequila.kiwi.com/locations/query'
 KEYS = {"apikey": API_KEY}
 class FlightSearch:
