@@ -25,7 +25,7 @@ for dic_value in sheet_data["prices"]:
     if dic_value["iataCode"] == "":
         sheet_data["prices"][iter_order]["iataCode"] = iata_codes[iter_order]
     ticket_info = FlightData(dic_value["iataCode"],dic_value['city'])
-    all_data = ticket_info.search_for_ticket()#What are we gonna do with all data?
+    all_data = ticket_info.search_for_ticket()
     new_ticket_info = {all_data[dic_value['city']]['cityTo']:all_data[dic_value['city']]['price']}
     tickets.append(new_ticket_info)
     all_info_abt_tickets.append(all_data)
