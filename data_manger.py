@@ -4,8 +4,7 @@ import os
 
 USER = os.environ["GOOGLE_SHEETS_USER"]
 PASSWORD = os.environ["GOOGLE_SHEETS_PASS"]
-LINK =  "https://api.sheety.co/1899d5724ceea3b5156ba8ba6eed8acf/flightDeals/prices"
-#"https://api.sheety.co/7f11a38b26220b82b0876ad6e7739c4e/flightDeals/prices"
+LINK =  "https://api.sheety.co/YOUR LINK"
 
 class DataManger:
     def __init__(self):
