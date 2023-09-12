@@ -6,7 +6,6 @@ from notification import NotificationManager
 data = DataManger()
 sheet_data = data.get_info()
 ex_sheet_data = sheet_data
-pprint(sheet_data)
 iter_order = 0
 print("\n\n")
 iata_codes = []
@@ -19,7 +18,6 @@ for city in sheet_data["prices"]:
     code = p.get_destination_code(which_city)
     iata_codes.append(code)
 
-print(iata_codes)    
 
 for dic_value in sheet_data["prices"]:
     if dic_value["iataCode"] == "":
@@ -32,18 +30,13 @@ for dic_value in sheet_data["prices"]:
     if dic_value["lowestPrice"] > tickets[iter_order][dic_value['city']]:
         sheet_data["prices"][iter_order]["lowestPrice"] = tickets[iter_order][dic_value['city']]
     iter_order +=1
-print("\n\n")
-print(tickets,"\n")
-print("AFTER UPDATE")
 pprint(sheet_data)
-
 data.put_info(sheet_data)
 
 #Twilio part!
 iter_order = 0
 for dic_value in sheet_data["prices"]:
     if ex_sheet_data['prices'][iter_order]['lowestPrice'] > dic_value["lowestPrice"]:
-        #This logic must be taken to action!
         city= dic_value['city']
         my_info = all_info_abt_tickets[iter_order]
         tw = NotificationManager(
